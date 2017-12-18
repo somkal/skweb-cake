@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<title>Sowmya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Raleway", sans-serif;
+}
+
+.lato {
+    font-family: "Lato";
+}
+
+.wide {
+    letter-spacing: 4px;
+}
+
+.section-full {
+    min-height: 600px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-height: 80vh;
+    max-width: 90vw;
+    text-align: center;
+}
+
+#art img {
+    margin-bottom: 10px;
+    opacity: 0.8;
+    cursor: pointer
+}
+
+#art img:hover {
+    opacity: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#categories {
+    overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.clr:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#categories li {
+    position: relative;
+    list-style-type: none;
+    float: left;
+    overflow: hidden;
+    visibility: hidden;
+    transform: rotate(-60deg) skewY(30deg);
+}
+
+#categories li * {
+    position: absolute;
+    visibility: visible;
+}
+
+#categories li > div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    transform: skewY(-30deg) rotate(60deg);
+    backface-visibility: hidden;
+}
+
+
+/* HEX CONTENT */
+
+#categories li img {
+    left: -100%;
+    right: -100%;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#categories div h1,
+#categories div p {
+    width: 90%;
+    padding: 0 5%;
+    background-color: #008080;
+    background-color: rgba(0, 128, 128, 0.8);
+    font-family: 'Raleway', sans-serif;
+    transition: top .2s ease-out, bottom .2s ease-out, .2s padding .2s ease-out;
+}
+
+#categories li h1 {
+    bottom: 110%;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.5em;
+    padding-top: 100%;
+    padding-bottom: 100%;
+}
+
+#categories li h1:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 45%;
+    width: 10%;
+    text-align: center;
+    z-index: 1;
+    border-bottom: 2px solid #fff;
+}
+
+#categories li p {
+    padding-top: 50%;
+    top: 110%;
+    padding-bottom: 50%;
+}
+
+
+/* HOVER EFFECT  */
+
+#categories li div:hover h1 {
+    bottom: 50%;
+    padding-bottom: 10%;
+}
+
+#categories li div:hover p {
+    top: 50%;
+    padding-top: 10%;
+}
+
+@media (min-width:1201px) {
+    #categories li {
+        width: 19.2%;
+        /* = (100-4) / 5 */
+        padding-bottom: 22.17%;
+        /* =  width /0.866 */
+    }
+    #categories li:nth-child(9n+6),
+    #categories li:nth-child(9n+7),
+    #categories li:nth-child(9n+8),
+    #categories li:nth-child(9n+9) {
+        margin-top: -4.2%;
+        margin-bottom: -4.2%;
+        transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    }
+    #categories li:nth-child(9n+6):last-child,
+    #categories li:nth-child(9n+7):last-child,
+    #categories li:nth-child(9n+8):last-child,
+    #categories li:nth-child(9n+9):last-child {
+        margin-bottom: 0;
+    }
+    #categories li:nth-child(9n+6) {
+        margin-left: 0.5%;
+        clear: left;
+    }
+    #categories li:nth-child(9n+10) {
+        clear: left;
+    }
+    #categories li:nth-child(9n+2),
+    #categories li:nth-child(9n+ 7) {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    #categories li:nth-child(9n+3),
+    #categories li:nth-child(9n+4),
+    #categories li:nth-child(9n+8) {
+        margin-right: 1%;
+    }
+}
+
+@media (max-width: 1200px) and (min-width:901px) {
+    #categories li {
+        width: 24.25%;
+        /* = (100-3) / 4 */
+        padding-bottom: 28.002%;
+        /* =  width /0.866 */
+    }
+    #categories li:nth-child(7n+5),
+    #categories li:nth-child(7n+6),
+    #categories li:nth-child(7n+7) {
+        margin-top: -6.1%;
+        margin-bottom: -6.1%;
+        transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    }
+    #categories li:nth-child(7n+5):last-child,
+    #categories li:nth-child(7n+6):last-child,
+    #categories li:nth-child(7n+7):last-child {
+        margin-bottom: 0;
+    }
+    #categories li:nth-child(7n+2),
+    #categories li:nth-child(7n+6) {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    #categories li:nth-child(7n+3) {
+        margin-right: 1%;
+    }
+    #categories li:nth-child(7n+8) {
+        clear: left;
+    }
+    #categories li:nth-child(7n+5) {
+        clear: left;
+        margin-left: 0.5%;
+    }
+}
+
+@media (max-width: 900px) and (min-width:601px) {
+    #categories li {
+        width: 32.666%;
+        /* = (100-2) / 3 */
+        padding-bottom: 37.721%;
+        /* =  width /0.866 */
+    }
+    #categories li:nth-child(5n+4),
+    #categories li:nth-child(5n+5) {
+        margin-top: -8.622%;
+        margin-bottom: -8.622%;
+        transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    }
+    #categories li:nth-child(5n+4):last-child,
+    #categories li:nth-child(5n+5):last-child {
+        margin-bottom: 0;
+    }
+    #categories li:nth-child(5n+4) {
+        margin-right: 1%;
+        margin-left: 0.5%;
+    }
+    #categories li:nth-child(5n+2) {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    #categories li:nth-child(5n+6) {
+        clear: left;
+    }
+}
+
+@media (max-width: 600px) {
+    #categories li {
+        width: 49.5%;
+        /* = (100-1) / 2 */
+        padding-bottom: 57.16%;
+        /* =  width /0.866 */
+    }
+    #categories li:nth-child(3n+3) {
+        margin-top: -13.392%;
+        margin-bottom: -13.392%;
+        transform: translateX(50%) rotate(-60deg) skewY(30deg);
+    }
+    #categories li:nth-child(3n+3):last-child {
+        margin-bottom: 0;
+    }
+    #categories li:nth-child(3n+3) {
+        margin-left: 0.5%;
+    }
+    #categories li:nth-child(3n+2) {
+        margin-left: 1%;
+    }
+    #categories li:nth-child(3n+4) {
+        clear: left;
+    }
+}
+
+#fork {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #000;
+    padding: .5em .7em;
+    margin: 1%;
+    transition: color .5s;
+    overflow: hidden;
+}
+</style>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <ul class="w3-navbar" id="myNavbar">
+            <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+                <a class="w3-hover-black" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+            <li class="w3-left-align"><a href="#about">ABOUT</a></li>
+            <li class="w3-hide-small"><a href="#skills">SKILLS</a></li>
+            <li class="w3-hide-small"><a href="#work">WORK</a></li>
+            <li class="w3-hide-small"><a href="#art">ART</a></li>
+        </ul>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
+            <ul class="w3-navbar w3-left-align w3-white">
+                <li><a href="#about" onclick="toggleFunction()">ABOUT</a></li>
+                <li><a href="#skills" onclick="toggleFunction()">SKILLS</a></li>
+                <li><a href="#work" onclick="toggleFunction()">WORK</a></li>
+                <li><a href="#art" onclick="toggleFunction()">ART</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="w3-panel w3-content w3-padding-128 w3-center section-full">
+        <h1 class="wide">Sowmya Raj</h1>
+        <img src="Images/halfAvatar.png" class="w3-circle" style="width:10%" alt="halfAvatar">
+        <div class="w3-padding-10">
+            <h4 class="lato wide">Software Developer, Web Designer, Artist </h4></div>
+        <a href="https://drive.google.com/open?id=0B4OWTTQyW1fEQV9FVnlhMnk0Nzg" class="w3-btn w3-light-grey w3-padding-large w3-margin-top" target="_new">
+            <i class="fa fa-download"></i> Download Resume</a>
+    </header>
+    <!-- Container (About Section) -->
+    <div class="w3-container w3-content w3-padding-64 w3-center section-full w3-margin-bottom" id="about">
+        <h2 class="w3-xlarge" style="letter-spacing: 4px">About Me</h2>
+        <a name="about"></a>
+        <img class="w3-grayscale w3-image" src="Images/mySelf.jpg" alt="Me" class="w3-image" style="display:block;margin:auto;max-height:250px">
+        <div class="w3-padding-xxlarge">
+            <p>Creative and self-propelled professional with skills for web development including web graphic design, creating wireframes, user journeys and HTML/CSS coding. Results-driven achiever with exemplary planning and organizational skills, along with a high degree of detail orientation. Enthusiastic, knowledge-hungry learner, eager to meet challenges and quickly assimilate new concepts.
+            </p>
+            <br>
+            <a class="w3-btn" href="mailto:sowmya.snhu@gmail.com?Subject=Hello" target="_top">Message Me</a>
+        </div>
+
+    </div>
+           <div class="clear"></div>
+    <!-- Skills Section -->
+    <div class="w3-container w3-content w3-padding-64 w3-center section-full" id="skills">
+        <h2 class="w3-xlarge" style="letter-spacing: 4px">Skills</h2>
+        <a name="skills"></a>
+        <img src="Images/skills.png" alt="Me" class="w3-image" style="display:block;margin:auto;">
+    </div>
+    <!-- Work Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64 section-full" id="work">
+        <a name="work"></a>
+        <h2 class="w3-xlarge" style="letter-spacing: 4px">Work</h2>
+        <br>
+        <div class="w3-row-padding w3-center w3-margin-top">
+            <div class="w3-third">
+                <div class="w3-card-2 w3-light-grey w3-padding-top" style="min-height:500px">
+                    <h3 class="w3-large" style="letter-spacing: 4px">RightHand</h3>
+                    <br>
+                    <img src="Images/rightHand.png" alt="RightHand" style="width:90%">
+                    <p class="w3-padding-large"> An On-demand assistance service for senior citizens using MAMP (Macintosh, Apache, MySQL, and PHP) application server, HTML, CSS, jQuery, JsRender and Google Maps Location APIs.</p>
+                    <br>
+                    <a href="https://www.behance.net/gallery/45756739/RightHand" class="w3-btn w3-light-grey" target="_new">View on Behance
+                    </a>
+                </div>
+            </div>
+            <div class="w3-third">
+                <div class="w3-card-2 w3-light-grey w3-padding-top" style="min-height:500px">
+                    <h3 class="w3-large" style="letter-spacing: 4px">Serene Spa</h3>
+                    <br>
+                    <img src="Images/sereneSpa.png" alt="RightHand" style="width:85%">
+                    <p class="w3-padding-large">An On-demand booking service using techniques as user journeys, customer experience maps, wireframes, Abobe Muse and Microsoft Visio.</p>
+                    <br>
+                    <br>
+                    <a href="https://www.behance.net/gallery/45761035/Serene-Spa" class="w3-btn w3-light-grey" target="_new">View on Behance
+                    </a>
+                </div>
+            </div>
+            <div class="w3-third">
+                <div class="w3-card-2 w3-light-grey w3-padding-top" style="min-height:500px">
+                    <h3 class="w3-large" style="letter-spacing: 4px">SpotLess Cleaners</h3>
+                    <br>
+                    <img src="Images/spotLessCleaners.png" alt="RightHand" style="width:95%">
+                    <p class="w3-padding-large">SpotLess Cleaners website was designed and developed for a housecleaning company called Spotless Surfaces Cleaning Company. The process involved following more refined Agile development approach called Scrum.</p>
+                    <a href="https://www.behance.net/gallery/45761095/Spotless-Cleaners" class="w3-btn w3-light-grey" target="_new">View on Behance
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a name="art"></a>
+    <!-- Paintings Grid -->
+    <div class="w3-row-padding w3-content w3-padding-64 w3-center" style="padding-bottom:128px" id="art">
+        <h2 class="w3-xlarge" style="letter-spacing: 4px">Art</h2>
+        <br>
+        <ul id="categories" class="clr w3-center">
+            <li>
+                <div>
+                    <img src="Images/redness.jpg" style="width:100%" onclick="onClick(this)" alt="Redness">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/becauseOfYou.JPG" style="width:100%" onclick="onClick(this)" alt="Because of You">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/feathersInMyCap.JPG" style="width:100%" onclick="onClick(this)" alt="Feathers in my Cap">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/smokeOnFire.JPG" style="width:100%" onclick="onClick(this)" alt="Smoke on Fire">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/makingHeadlines.JPG" style="width:100%" onclick="onClick(this)" alt="Making HeadLines">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/loveLife.JPG" style="width:100%" onclick="onClick(this)" alt="Love Life">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/sriHariGanesh.JPG" style="width:100%" onclick="onClick(this)" alt="Colorful yet Divine">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/mexGanesha.jpg" style="width:100%" onclick="onClick(this)" alt="Divine">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images/divinty.jpg" style="width:100%" onclick="onClick(this)" alt="Divine">
+                </div>
+            </li>
+        </ul>
+        <!-- End page content -->
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black w3-padding-0" onclick="this.style.display='none' ">
+            <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-xxlarge
+ w3-container w3-display-topright"><i class="fa fa-times"></i></span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64 ">
+                <img id="img01" class="w3-image modal-content">
+                <p id="caption"></p>
+            </div>
+        </div>
+    </div>
+    <!-- End page content -->
+    <div class="clear"></div>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-light-grey w3-center">
+        <div class="w3-xlarge ">
+            <a href="https://github.com/somkal" class="w3-hover-text-light-green "><i class="fa fa-github "></i></a>
+            <a href="https://www.linkedin.com/in/sowmya-raj-92a819103" class="w3-hover-text-indigo "><i class="fa fa-linkedin "></i></a>
+            <a href="https://www.twitter.com/create1self" class="w3-hover-text-light-blue "><i class="fa fa-twitter "></i></a>
+        </div>
+        <div class="w3-center">Sowmya | &copy; 2017 &nbsp; All rights reserved. &nbsp;
+        </div>
+    </footer>
+    <script>
+    // Modal Image Gallery
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+    }
+
+    // Change style of navbar on scroll
+    window.onscroll = function() {
+        myFunction()
+    };
+
+    function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+        } else {
+            navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+        }
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+    </script>
+</body>
+
+</html>
