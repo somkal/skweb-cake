@@ -1,0 +1,218 @@
+<html>
+
+<head>
+    <title>Talkies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: url("yellowDesktopBackground.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Times New Roman;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .header img {
+        float: right;
+        width: 200px;
+        height: auto;
+        padding: 5px;
+
+    }
+
+    .tagLine {
+        color: grey;
+         float: right;
+     
+    }
+
+    .row {
+        margin: 8px auto;
+    }
+
+
+    .column {
+        float: left;
+        width: 100%;
+        padding: 10px;
+
+    }
+
+    .column img {
+        margin-top: 8px;
+        max-width: 200px;
+        max-height: 300px;
+        width: auto;
+        height: auto;
+    }
+
+    .container {
+        margin: 0 auto;
+        background-color: rgba(252, 250, 238, 0.6);
+        padding: 20px;
+        text-align: center;
+
+    }
+
+    .movieCard {
+        max-width: 200px;
+        max-height: 400px;
+        background-color: #FBFBFB;
+        padding: 20px;
+        text-align: center;
+        margin: 0 auto;
+        box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.50);
+    }
+
+
+    .thumbsUpButton,
+    .thumbsDownButton {
+
+        background-size: cover;
+        background-color: transparent;
+        border: none;
+        padding: 12px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .thumbsUpButton {
+        background-image: url("thumbsUpIcon.png");
+    }
+
+    .thumbsDownButton {
+        background-image: url("thumbsDownIcon.png");
+    }
+
+    .upContainer {
+        height: 40px;
+        text-align: center;
+        float: left;
+    }
+
+    .downContainer {
+        height: 40px;
+        text-align: center;
+        float: right;
+    }
+
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .movieHeading {
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .movieTitle {
+        /*font-weight: bold;*/
+        text-align: center;
+        padding: 10px;
+
+    }
+
+    .template {
+        display: none;
+    }
+
+    /* Resposive layout - makes columns stack on each other */
+    @media only screen and (min-width: 540px) {
+
+        /* For tablets: */
+        .row {
+            width: 520px;
+        }
+
+        .column {
+            width: 50%;
+        }
+    }
+
+    @media only screen and (min-width: 960px) {
+
+        /* For Desktop: */
+        .row {
+            width: 960px;
+        }
+
+        .column {
+            width: 33%;
+        }
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="clearfix">
+            <img src="talkiesTitle.png"/>
+            <br />
+        </div>
+            <div class="tagLine clearfix">Let's Rate Your Favorite Movies</div>
+    </div>
+    <div class="row">
+        <div class="template">
+            <div class="container">
+                <div class="movieCard">
+                    <img src="movieImage/ts3Movie1.jpg" class="moviePoster" style="width:100%">
+                    <div class="movieTitle clearfix"> Toy Story 3</div>
+                    <div class="clearfix">
+                        <div class="upContainer">
+                            <button class="thumbsUpButton"> </button>
+                            <div class="thumbsUpDisplay">0</div>
+                        </div>
+                        <div class="downContainer">
+                            <button class="thumbsDownButton"> </button>
+                            <div class="thumbsDownDisplay">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Movie grid -->
+    <script type="text/javascript">
+    var movies = [
+        { "name": "Frozen", "poster": "movieImage/fMovie.jpeg", "thumbsUp": 0, "thumbsDown": 0 },
+        { "name": "Moana", "poster": "movieImage/mMovie.jpeg", "thumbsUp": 0, "thumbsDown": 0 },
+        { "name": "Finding Dory", "poster": "movieImage/fdMovie.jpeg", "thumbsUp": 0, "thumbsDown": 0 },
+        { "name": "Finding Nemo", "poster": "movieImage/fnMovie.jpeg", "thumbsUp": 0, "thumbsDown": 0 },
+        { "name": "Planes", "poster": "movieImage/pMovie.jpeg", "thumbsUp": 0, "thumbsDown": 0 },
+        { "name": "Toy Story 4", "poster": "movieImage/ts4Movie.jpeg", "thumbsUp": 0, "thumbsDown": 0 }
+    ];
+    movies.forEach(function(m, idx) {
+        var item = $(".template").clone();
+        item.removeClass("template");
+        item.find(".movieTitle").text(m.name);
+        item.find(".moviePoster").attr("src", m.poster);
+        item.addClass("column");
+        item.find(".thumbsUpDisplay").text(m.thumbsUp);
+        item.find(".thumbsUpButton").click(function() {
+            m.thumbsUp++;
+            item.find(".thumbsUpDisplay").text(m.thumbsUp);
+        });
+        item.find(".thumbsDownDisplay").text(m.thumbsDown);
+        item.find(".thumbsDownButton").click(function() {
+            m.thumbsDown++;
+            item.find(".thumbsDownDisplay").text(m.thumbsDown);
+        });
+        $(".row").append(item);
+
+    });
+    </script>
+</body>
+
+</html>

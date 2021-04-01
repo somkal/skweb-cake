@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Thumbs up</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.46426954,17.4130383 C8.43809422,17.5269446 13.0375707,17.2937636 13.2702872,16.6085479 C14.5008943,12.9851211 15.6321186,12.540464 15.9402316,10.9424571 C16.7022968,6.99005916 15.0436206,2.86156152 16,1.44808661 C18.2215508,-1.83524038 20.9098426,1.02745636 23,4.44808661 C24.2926436,6.56355199 24.6259769,10.563552 24,16.4480866 L38.4642695,16.4130383 L38.4642695,16.4130383 C40.8713827,16.4130383 42.8227334,18.3643891 42.8227334,20.7715022 C42.8227334,21.2291127 42.750667,21.6838683 42.6091824,22.1190573 L37.8326076,36.8112054 C36.7472007,40.149783 33.6120297,42.3906685 30.1018576,42.3368132 C22.7113213,42.2234229 17.1654586,42.2488312 13.4642695,42.4130383 C13.4642695,42.4130383 13.4642695,42.4130383 13.4642695,42.4130383 L13.4642695,42.4130383 C9.53581489,42.5873283 6.20988322,39.5439765 6.03559324,35.6155219 C6.03177497,35.5294589 6.02951895,35.4433338 6.02882631,35.357189 C5.93248671,23.3721092 6.07762578,17.3907257 6.46426954,17.4130383 Z" id="path-1"></path>
+        <filter x="-16.3%" y="-21.2%" width="138.0%" height="133.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="1" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="0" y="14.4480866" width="9" height="29" rx="4.5"></rect>
+        <filter x="-72.2%" y="-25.9%" width="244.4%" height="144.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.384595751 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Thumbs-up" transform="translate(4.000000, 6.000000)">
+            <g>
+                <g id="Thumb">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <path stroke="#FFD500" stroke-width="2" d="M7.23113646,18.4471579 C7.22590898,18.4989608 7.22072566,18.5535608 7.2156102,18.6108834 C7.15145548,19.3297863 7.10094141,20.4310293 7.06513487,21.9066006 C6.99287829,24.8842615 6.98070324,29.3664433 7.02879399,35.3491488 C7.02938935,35.4231948 7.03132851,35.4972238 7.03461052,35.5711994 C7.18442189,38.9479121 10.0432345,41.5638324 13.4199471,41.4140211 C17.1451385,41.2487491 22.7084317,41.2232608 30.1171985,41.3369308 C33.1885989,41.3840542 35.9318735,39.4232795 36.8816045,36.5020241 L41.6581793,21.8098761 C41.7672018,21.4745363 41.8227334,21.1241192 41.8227334,20.7715022 C41.8227334,18.9166738 40.3190979,17.4130383 38.4666926,17.4130354 L22.8876943,17.4507848 L23.0056104,16.3423068 C23.6099103,10.6615479 23.2917312,6.84339848 22.1466929,4.96949526 C21.0238324,3.13188693 19.9576246,1.85004873 19.0315519,1.28965237 C18.1729708,0.770097382 17.5706538,0.911214322 16.8282276,2.00847846 C16.6251688,2.30858789 16.6410573,2.98101776 16.9137633,5.32618936 C17.1668752,7.50285907 17.22972,8.84401507 17.0462485,10.340605 C17.013358,10.6088956 16.9721393,10.872496 16.9221463,11.1317809 C16.8255318,11.6328656 16.6623265,12.066781 16.4132549,12.5293643 C16.2665615,12.8018079 15.5973807,13.8676555 15.4192461,14.1825163 C14.9806806,14.9577001 14.5974139,15.8105283 14.2171681,16.9301325 C13.8084163,18.1336703 10.3848313,18.5395291 7.23113646,18.4471579 Z" stroke-linejoin="square" fill="#FCFAEE" fill-rule="evenodd"></path>
+                </g>
+                <g id="Sleeve">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <rect stroke="#000000" stroke-width="1" stroke-linejoin="square" fill="#FCFAEE" fill-rule="evenodd" x="0.5" y="14.9480866" width="8" height="28" rx="4"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

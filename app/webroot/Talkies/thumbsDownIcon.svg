@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="49px" viewBox="0 0 54 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Thumbs Down</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-36.4%" y="-27.9%" width="163.6%" height="160.5%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M6.93083524,17.6930102 C8.91416202,17.8031031 13.5357806,17.5777286 13.7696174,16.9154529 C15.0061487,13.4133333 16.1428188,12.9835626 16.4524151,11.4390547 C17.2181488,7.61897731 15.5514878,3.62869581 16.5124712,2.262542 C18.7447166,-0.910863939 21.44595,1.85599385 23.5461696,5.16210633 C24.845036,7.20674898 25.179974,11.0728348 24.5509836,16.7603636 L39.0848849,16.7264887 L39.0848849,16.7264887 C41.4741949,16.7264887 43.4111134,18.6634072 43.4111134,21.0527172 C43.4111134,21.5237858 43.3341771,21.9916922 43.1833427,22.4379596 L38.4824271,36.3463488 C37.3697504,39.6383781 34.259115,41.8356247 30.7845172,41.7838895 C23.3072596,41.6725564 17.7005984,41.6966086 13.9645336,41.8560463 C13.9645336,41.8560463 13.9645336,41.8560463 13.9645336,41.8560463 L13.9645336,41.8560463 C10.0092919,42.0248373 6.66610278,38.9553126 6.4973117,35.0000709 C6.49379002,34.9175482 6.49169496,34.8349708 6.49102746,34.7523757 C6.39890257,23.3580768 6.5455187,17.6716216 6.93083524,17.6930102 Z" id="path-2"></path>
+        <filter x="-5.4%" y="-4.9%" width="110.7%" height="109.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-4" x="0.214767915" y="14.1603765" width="9" height="28" rx="4.5"></rect>
+        <filter x="-77.8%" y="-32.1%" width="255.6%" height="150.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Thumbs-Down" transform="translate(3.000000, 1.000000)">
+            <g>
+                <g filter="url(#filter-1)" transform="translate(22.000000, 21.500000) rotate(-180.000000) translate(-22.000000, -21.500000) ">
+                    <g id="Thumb">
+                        <use fill="#FCFAEE" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <path stroke="#FFD500" stroke-width="2" d="M7.69349433,18.7258704 C7.68971111,18.762715 7.68595139,18.8009933 7.68222549,18.8406743 C7.61828944,19.5215979 7.56767575,20.5666965 7.53155863,21.9675832 C7.45860659,24.7971986 7.44501644,29.0575447 7.4909948,34.7442943 C7.49156918,34.8153669 7.49337197,34.8864242 7.49640235,34.9574344 C7.64164595,38.3608936 10.518438,41.0021992 13.9218971,40.8569556 C17.6811192,40.6965297 23.3045684,40.6724054 30.7994051,40.7840003 C33.839678,40.8292687 36.5614838,38.906678 37.5350759,36.0261523 L42.2359915,22.1177633 C42.3519608,21.7746498 42.4111134,21.4148992 42.4111134,21.0527172 C42.4111134,19.215692 40.9219102,17.7264887 39.0872157,17.726486 L23.4340076,17.7629698 L23.5570433,16.6504426 C24.1628095,11.1729139 23.8442905,7.49634739 22.7020839,5.6983147 C21.5753661,3.92466408 20.5063359,2.68841167 19.5757732,2.14675808 C18.7006964,1.63740116 18.0757638,1.77823693 17.3303858,2.83788162 C17.1380518,3.11130767 17.1539254,3.75751044 17.4253165,6.00243297 C17.6802935,8.11157935 17.7436646,9.41242704 17.5583849,10.8661707 C17.5251352,11.1270548 17.4834612,11.3834102 17.4329108,11.6355949 C17.3344692,12.1266987 17.1683541,12.5515193 16.9155886,13.0030731 C16.7673076,13.2679702 16.0945715,14.2986464 15.9163282,14.6016929 C15.4771731,15.3483374 15.0934572,16.1696265 14.7125664,17.2483901 C14.2966798,18.4262697 10.8701621,18.8171623 7.69349433,18.7258704 Z" stroke-linejoin="square"></path>
+                    </g>
+                    <g id="Sleeve">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                        <rect stroke="#000000" stroke-width="1" stroke-linejoin="square" fill="#FCFAEE" fill-rule="evenodd" x="0.714767915" y="14.6603765" width="8" height="27" rx="4"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
