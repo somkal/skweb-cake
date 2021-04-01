@@ -2,7 +2,7 @@
 
 <head>
     <title>Talkies</title>
-    <link rel="shortcut icon" type="image/jpg" href="./favicon.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style type="text/css">
@@ -26,25 +26,21 @@
             width: 200px;
             height: auto;
             padding: 5px;
-
         }
 
         .tagLine {
             color: grey;
             float: right;
-
         }
 
         .row {
             margin: 8px auto;
         }
 
-
         .column {
             float: left;
             width: 100%;
             padding: 10px;
-
         }
 
         .column img {
@@ -60,7 +56,6 @@
             background-color: rgba(252, 250, 238, 0.6);
             padding: 20px;
             text-align: center;
-
         }
 
         .movieCard {
@@ -73,10 +68,8 @@
             box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.50);
         }
 
-
         .thumbsUpButton,
         .thumbsDownButton {
-
             background-size: cover;
             background-color: transparent;
             border: none;
@@ -121,7 +114,6 @@
             /*font-weight: bold;*/
             text-align: center;
             padding: 10px;
-
         }
 
         .template {
@@ -151,7 +143,6 @@
             .column {
                 width: 33%;
             }
-
         }
     </style>
     <script>
@@ -170,9 +161,9 @@
                 getImage: function () {
                     return mImage;
                 },
-                inc: function() {
+                inc: function () {
                     var counter = 0;
-                    return function() {
+                    return function () {
                         return counter += 1;
                     }
                 }
@@ -210,9 +201,6 @@
         </div>
     </div>
 
-
-
-
     <!-- Movie grid -->
     <script type="text/javascript">
         var movies = [
@@ -223,7 +211,6 @@
             { "name": "Planes", "poster": "movieImage/pMovie.jpeg" },
             { "name": "Toy Story 4", "poster": "movieImage/ts4Movie.jpeg" }
         ];
-
         movies.forEach(function (m, idx) {
             var mObj = movie.init(m);
             // console.log(item.getName());
