@@ -11,26 +11,40 @@
         }
 
         body {
-            background: url("yellowDesktopBackground.jpg");
+            background: url("yellowLineBackground.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            font-family: Times New Roman;
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
         }
 
         .header {
+            background-color: #FFCC00;
             padding: 20px;
         }
 
         .header img {
-            float: right;
-            width: 200px;
+            float: left;
+            width: 180px;
             height: auto;
-            padding: 5px;
+            padding: 2px;
         }
 
         .tagLine {
-            color: grey;
+            color: black;
+            float: left;
+        }
+
+        .header-right img {
+            width: 45px;
             float: right;
+            cursor: pointer;
         }
 
         .row {
@@ -41,86 +55,102 @@
             float: left;
             width: 100%;
             padding: 10px;
+            margin: 10px 0;
         }
 
         .column img {
-            margin-top: 8px;
             max-width: 200px;
             max-height: 300px;
             width: auto;
             height: auto;
         }
 
-        .container {
-            margin: 0 auto;
-            background-color: rgba(252, 250, 238, 0.6);
-            padding: 20px;
-            text-align: center;
-        }
-
         .movieCard {
             max-width: 200px;
             max-height: 400px;
             background-color: #FBFBFB;
-            padding: 20px;
+            border: 1px solid #FFCC00;
+            padding: 0 0 20px 0;
             text-align: center;
             margin: 0 auto;
-            box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.50);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
         }
 
-        .thumbsUpButton,
-        .thumbsDownButton {
-            background-size: cover;
-            background-color: transparent;
-            border: none;
-            padding: 12px;
-            margin: 4px 2px;
-            cursor: pointer;
+        .moviePoster {
+            width: 100%;
         }
 
-        .thumbsUpButton {
-            background-image: url("thumbsUpIcon.png");
+        .movieTitle {
+            font-weight: bold;
+            text-align: center;
+            font-family: Helvetica;
+            letter-spacing: 0.5px;
+            padding: 10px;
         }
 
-        .thumbsDownButton {
-            background-image: url("thumbsDownIcon.png");
+        .votesBar {
+            width: 100%;
+            height: 7px;
+            display: block;
+            margin: 0 auto;
+            background: none;
         }
 
-        .upContainer {
+        .votesBar::-webkit-progress-bar {
+            background: #F08080;
+        }
+
+        .votesBar::-webkit-progress-value {
+            background: #32CD32;
+        }
+
+        .upBox {
             height: 40px;
             text-align: center;
             float: left;
         }
 
-        .downContainer {
+        .downBox {
             height: 40px;
             text-align: center;
             float: right;
         }
 
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
+        .upButton,
+        .downButton {
+            background-color: transparent;
+
+            background-size: cover;
+            padding: 12px;
+            margin: 4px 15px;
+            cursor: pointer;
+            border: none;
         }
 
-        .movieHeading {
-            font-weight: bold;
-            text-align: center;
-            padding: 10px;
+        .upButton:hover {
+            background-image: url("hoverThumbsUpIcon.png");
+
         }
 
-        .movieTitle {
-            /*font-weight: bold;*/
-            text-align: center;
-            padding: 10px;
+        .downButton:hover {
+            background-image: url("hoverThumbsDownIcon.png");
+
         }
 
-        .template {
-            display: none;
+        .upButton:active,
+        .downButton:active {
+            transform: translateY(2px);
         }
 
-        /* Resposive layout - makes columns stack on each other */
+        .upButton {
+            background-image: url("thumbsUpIcon1.png");
+        }
+
+        .downButton {
+            background-image: url("thumbsDownIcon1.png");
+        }
+
+        /* Resposive layout */
         @media only screen and (min-width: 540px) {
 
             /* For tablets: */
@@ -136,104 +166,108 @@
         @media only screen and (min-width: 960px) {
 
             /* For Desktop: */
+            body {
+                background-size: cover;
+            }
+
             .row {
                 width: 960px;
             }
 
             .column {
-                width: 33%;
+                width: 25%;
             }
         }
     </style>
-    <script>
-        var movie = (function () {
-            var mImage;
-            var mName;
-            return {
-                init: function (m) {
-                    mImage = m.poster;
-                    mName = m.name;
-                    return this;
-                },
-                getName: function () {
-                    return mName;
-                },
-                getImage: function () {
-                    return mImage;
-                },
-                inc: function () {
-                    var counter = 0;
-                    return function () {
-                        return counter += 1;
-                    }
-                }
-            }
-        })();
-    </script>
 </head>
+
 
 <body>
     <div class="header">
         <div class="clearfix">
-            <img src="talkiesTitle.png" />
-            <br />
-        </div>
-        <div class="tagLine clearfix">Let's Rate Your Favorite Movies</div>
-    </div>
-    <div class="row">
-        <div class="template">
-            <div class="container">
-                <div class="movieCard">
-                    <img src="movieImage/ts3Movie.jpeg" class="moviePoster" style="width:100%">
-                    <div class="movieTitle clearfix"> Toy Story 3</div>
-                    <div class="clearfix">
-                        <div class="upContainer">
-                            <button class="thumbsUpButton"> </button>
-                            <div class="thumbsUpDisplay">0</div>
-                        </div>
-                        <div class="downContainer">
-                            <button class="thumbsDownButton"> </button>
-                            <div class="thumbsDownDisplay">0</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="logo">
+                <img class="clearfix" src="talkiesTitle1.png" />
+            </div>
+            <div class="header-right">
+                <a onclick="downSort()"><img src="sortDown.png" /></a>
+                <a onclick="upSort()"><img src="sortUp.png" /></a>
             </div>
         </div>
+
     </div>
 
     <!-- Movie grid -->
+    <div class="row">
+    </div>
+
     <script type="text/javascript">
         var movies = [
-            { "name": "Frozen", "poster": "movieImage/fMovie.jpeg" },
-            { "name": "Moana", "poster": "movieImage/mMovie.jpeg" },
-            { "name": "Finding Dory", "poster": "movieImage/fdMovie.jpeg" },
-            { "name": "Finding Nemo", "poster": "movieImage/fnMovie.jpeg" },
-            { "name": "Planes", "poster": "movieImage/pMovie.jpeg" },
-            { "name": "Toy Story 4", "poster": "movieImage/ts4Movie.jpeg" }
+            { "name": "Frozen", "poster": "movieImage/fMovie.jpeg", "up": 5, "down": 3 },
+            { "name": "Moana", "poster": "movieImage/mMovie.jpeg", "up": 4, "down": 1 },
+            { "name": "Finding Dory", "poster": "movieImage/fdMovie.jpeg", "up": 6, "down": 1 },
+            { "name": "Lion King", "poster": "movieImage/lkMovie.jpeg", "up": 8, "down": 4 },
+            { "name": "Planes", "poster": "movieImage/pMovie.jpeg", "up": 7, "down": 5 },
+            { "name": "Toy Story 4", "poster": "movieImage/ts4Movie.jpeg", "up": 10, "down": 7 },
+            { "name": "Toy Story 2", "poster": "movieImage/ts2Movie.jpeg", "up": 14, "down": 8 },
+            { "name": "Toy Story", "poster": "movieImage/ts1Movie.jpeg", "up": 9, "down": 9 }
         ];
-        movies.forEach(function (m, idx) {
-            var mObj = movie.init(m);
-            // console.log(item.getName());
-            var mCard = $(".template").clone();
-            mCard.removeClass("template");
-            mCard.addClass("column");
-            mCard.find(".movieTitle").text(mObj.getName());
-            mCard.find(".moviePoster").attr("src", mObj.getImage());
-            mCard.find(".thumbsUpDisplay").text("0");
-            var incrTu = movie.inc();
-            mCard.find(".thumbsUpButton").click(function () {
-                var tuCount = incrTu();
-                mCard.find(".thumbsUpDisplay").text(tuCount);
+
+        function Movie(name, poster, up, down) {
+            this.name = name;
+            this.poster = poster;
+            this.up = up;
+            this.down = down;
+        }
+        Movie.prototype.votesRatio = function votesRatio() {
+            return this.up * 1.0 / (this.up + this.down);
+        };
+
+        movies.forEach(function (m) {
+            var mObj = new Movie(m.name, m.poster, m.up, m.down);
+            var udisp = $("<div/>").addClass("upDisplay").text(mObj.up);
+            var ubtn = $("<button/>").addClass("upButton").click(function upclick() {
+                mObj.up++;
+                udisp.text(mObj.up);
+                bar.attr("value", mObj.votesRatio());
             });
-            mCard.find(".thumbsDownDisplay").text("0");
-            var incrTd = movie.inc();
-            mCard.find(".thumbsDownButton").click(function () {
-                var tdCount = incrTd();
-                mCard.find(".thumbsDownDisplay").text(tdCount);
+            var ubox = $("<div/>").addClass("upBox");
+            ubox.append(udisp).append(ubtn);
+            var ddisp = $("<div/>").addClass("downDisplay").text(mObj.down);
+            var dbtn = $("<button/>").addClass("downButton").click(function downclick() {
+                mObj.down++;
+                ddisp.text(mObj.down);
+                bar.attr("value", mObj.votesRatio());
             });
-            $(".row").append(mCard);
-        })
+            var dbox = $("<div/>").addClass("downBox");
+            dbox.append(ddisp).append(dbtn);
+            var cfix = $("<div/>").addClass("clearfix");
+            cfix.append(ubox).append(dbox);
+            var mtitle = $("<div/>").addClass("movieTitle").addClass("clearfix").text(mObj.name);
+            var mimage = $("<img/>").addClass("moviePoster").attr("src", mObj.poster);
+            var bar = $("<progress/>").addClass("votesBar").attr("max", 1).attr("value", mObj.votesRatio());
+            var mcard = $("<div/>").addClass("movieCard");
+            mcard.append(mimage).append(bar).append(mtitle).append(cfix);
+            var column = $("<div/>").addClass("column");
+            column.append(mcard);
+            $(".row").append(column);
+        });
+
+        function upSort() {
+            $(".column").sort(function (x, y) {
+                var ty = $(y).find(".upDisplay").text();
+                var tx = $(x).find(".upDisplay").text();
+                return parseInt(ty) > parseInt(tx) ? 1 : -1;
+            }).appendTo(".row");
+        }
+
+        function downSort() {
+            $(".column").sort(function (x, y) {
+                var ty = $(y).find(".downDisplay").text();
+                var tx = $(x).find(".downDisplay").text();
+                return parseInt(ty) > parseInt(tx) ? 1 : -1;
+            }).appendTo(".row");
+        }
+
     </script>
 </body>
-
 </html>

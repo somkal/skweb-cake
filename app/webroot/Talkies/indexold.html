@@ -1,0 +1,262 @@
+<html>
+
+<head>
+    <title>Talkies</title>
+    <link rel="shortcut icon" type="image/jpg" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("yellowLineBackground.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .header {
+            background-color: #FFCC00;
+            padding: 20px;
+        }
+
+        .header img {
+            float: right;
+            width: 200px;
+            height: auto;
+            padding: 5px;
+        }
+
+        .tagLine {
+            color: grey;
+            float: right;
+        }
+
+        .row {
+            margin: 8px auto;
+        }
+
+        .template {
+            display: none;
+        }
+
+        .column {
+            float: left;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .column img {
+            max-width: 200px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+        }
+
+        .movieCard {
+            max-width: 200px;
+            max-height: 400px;
+            background-color: #FBFBFB;
+            border: 1px solid #FFCC00;
+            padding: 0 0 20px 0;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
+        }
+
+        .movieTitle {
+            font-weight: bold;
+            text-align: center;
+            font-family: Helvetica;
+            letter-spacing: 0.5px;
+            padding: 10px;
+        }
+
+        .upContainer {
+            height: 40px;
+            text-align: center;
+            float: left;
+        }
+
+        .downContainer {
+            height: 40px;
+            text-align: center;
+            float: right;
+        }
+
+        .thumbsUpButton,
+        .thumbsDownButton {
+            background-size: cover;
+            background-color: transparent;
+            border: none;
+            padding: 12px;
+            margin: 4px 15px;
+            cursor: pointer;
+        }
+
+        .thumbsUpButton:hover {
+            background-image: url("hoverThumbsUpIcon.png");
+
+        }
+
+        .thumbsDownButton:hover {
+            background-image: url("hoverThumbsUpIcon.png");
+
+        }
+
+        .thumbsUpButton {
+            background-image: url("thumbsUpIcon1.png");
+        }
+
+        .thumbsDownButton {
+            background-image: url("thumbsDownIcon1.png");
+        }
+
+        /* Resposive layout */
+        @media only screen and (min-width: 540px) {
+
+            /* For tablets: */
+            .row {
+                width: 520px;
+            }
+
+            .column {
+                width: 50%;
+            }
+        }
+
+        @media only screen and (min-width: 960px) {
+
+            /* For Desktop: */
+            .row {
+                width: 960px;
+            }
+
+            .column {
+                width: 25%;
+            }
+        }
+    </style>
+    <script>
+        var movie = (function () {
+            var mImage;
+            var mName;
+            return {
+                init: function (m) {
+                    mImage = m.poster;
+                    mName = m.name;
+                    return this;
+                },
+                getName: function () {
+                    return mName;
+                },
+                getImage: function () {
+                    return mImage;
+                },
+                newclickCounter: function () {
+                    var counter = 0;
+                    return function () {
+                        return counter += 1;
+                    }
+                }
+            }
+        })();
+    </script>
+</head>
+
+
+<body>
+    <div class="header">
+        <div class="clearfix">
+            <img src="talkiesTitle.png" />
+            <br />
+        </div>
+        <div class="tagLine clearfix">
+            Let's Rate Your Favorite Movies
+            <a onclick="sorter.up()">Up</a>
+            <a onclick="sorter.down()">Down</a>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="template">
+            <div class="movieCard">
+                <img src="movieImage/ts3Movie.jpeg" class="moviePoster" style="width:100%">
+                <div class="movieTitle clearfix"> Toy Story 3</div>
+                <div class="clearfix">
+                    <div class="upContainer">
+                        <div class="thumbsUpDisplay">0</div>
+                        <button class="thumbsUpButton"> </button>
+                    </div>
+                    <div class="downContainer">
+                        <div class="thumbsDownDisplay">0</div>
+                        <button class="thumbsDownButton"> </button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- Movie grid -->
+    <script type="text/javascript">
+        var movies = [
+            { "name": "Frozen", "poster": "movieImage/fMovie.jpeg", "up": 5, "down": 3 },
+            { "name": "Moana", "poster": "movieImage/mMovie.jpeg", "up": 5, "down": 3 },
+            { "name": "Finding Dory", "poster": "movieImage/fdMovie.jpeg", "up": 5, "down": 3 },
+            { "name": "Finding Nemo", "poster": "movieImage/fnMovie.jpeg", "up": 5, "down": 3 },
+            { "name": "Planes", "poster": "movieImage/pMovie.jpeg", "up": 5, "down": 3 },
+            { "name": "Toy Story 4", "poster": "movieImage/ts4Movie.jpeg", "up": 5, "down": 3 },
+
+        ];
+        var sorter = (function () {
+            return {
+                up: function () {
+                    $(".column").sort(function (x, y) {
+                        var ty = $(y).find(".thumbsUpDisplay").text();
+                        var tx = $(x).find(".thumbsUpDisplay").text();
+                        return parseInt(ty) > parseInt(tx) ? 1 : -1;
+                    }).appendTo(".row");
+                },
+                down: function () {
+                    $(".column").sort(function (x, y) {
+                        var ty = $(y).find(".thumbsDownDisplay").text();
+                        var tx = $(x).find(".thumbsDownDisplay").text();
+                        return parseInt(ty) > parseInt(tx) ? 1 : -1;
+                    }).appendTo(".row");
+                }
+            }
+        })();
+
+        movies.forEach(function (m) {
+            var mObj = movie.init(m);
+            console.log(mObj.getName());
+            var mCard = $(".template").clone();
+            mCard.removeClass("template");
+            mCard.addClass("column");
+            mCard.find(".movieTitle").text(mObj.getName());
+            mCard.find(".moviePoster").attr("src", mObj.getImage());
+            var incrTu = movie.newclickCounter();
+            mCard.find(".thumbsUpButton").click(function () {
+                var tuCount = incrTu();
+                mCard.find(".thumbsUpDisplay").text(tuCount);
+            });
+            var incrTd = movie.newclickCounter();
+            mCard.find(".thumbsDownButton").click(function () {
+                var tdCount = incrTd();
+                mCard.find(".thumbsDownDisplay").text(tdCount);
+            });
+            $(".row").append(mCard);
+        })
+    </script>
+</body>
+
+</html>
