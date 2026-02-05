@@ -9,5 +9,5 @@
 
 ## Copyright and License
 
-Copyright 2020 Sowmya Kalyan. <br/>
+Copyright 2026 Sowmya Kalyan. <br/>
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">&nbsp;Dew Drops</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Sowmya Kalyan</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/somkal/dewdrops" rel="dct:source">https://github.com/somkal/dewdrops</a>.
